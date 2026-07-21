@@ -1,0 +1,79 @@
+{
+  "metodo": "Correlação de Pearson entre a renda média do bairro e cada indicador.",
+  "aviso": "Correlação não é causalidade e n=29 bairros é uma amostra pequena. Serve para priorizar investigação, não como conclusão causal.",
+  "n_bairros": 29,
+  "resultados": [
+    {
+      "fator": "% população preta ou parda",
+      "r": -0.93
+    },
+    {
+      "fator": "% de crianças de 0 a 9 anos",
+      "r": -0.93
+    },
+    {
+      "fator": "taxa de alfabetização (15+)",
+      "r": 0.87
+    },
+    {
+      "fator": "% de idosos (60+)",
+      "r": 0.87
+    },
+    {
+      "fator": "% com esgotamento inadequado",
+      "r": -0.64
+    },
+    {
+      "fator": "partidas de ônibus por mil hab",
+      "r": 0.63
+    },
+    {
+      "fator": "% domicílios com esgoto em rede",
+      "r": 0.57
+    },
+    {
+      "fator": "% do bairro em favela",
+      "r": -0.56
+    },
+    {
+      "fator": "% domicílios sem calçada",
+      "r": -0.5
+    },
+    {
+      "fator": "% domicílios sem arborização",
+      "r": -0.49
+    },
+    {
+      "fator": "distância até saúde (m)",
+      "r": -0.48
+    },
+    {
+      "fator": "% domicílios sem bueiro",
+      "r": -0.44
+    },
+    {
+      "fator": "equip. de saúde por 10 mil hab",
+      "r": 0.37
+    },
+    {
+      "fator": "% domicílios sem iluminação pública",
+      "r": -0.3
+    },
+    {
+      "fator": "densidade demográfica",
+      "r": 0.3
+    },
+    {
+      "fator": "m² de área verde por hab",
+      "r": -0.2
+    },
+    {
+      "fator": "paradas por km²",
+      "r": 0.13
+    },
+    {
+      "fator": "equip. de lazer por 10 mil hab",
+      "r": -0.13
+    }
+  ]
+}

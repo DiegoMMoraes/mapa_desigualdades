@@ -1,0 +1,660 @@
+{
+  "projeto": "Mapa das Desigualdades — São Vicente",
+  "gerado_em": "2026-07-21",
+  "crs": "EPSG:4674 (SIRGAS 2000)",
+  "nota_crs": "O GeoJSON (RFC 7946) presume WGS84/EPSG:4326. Em SIRGAS 2000 a diferença no Brasil é submétrica; reprojete se seu fluxo exigir 4326 estrito.",
+  "fontes": {
+    "IBGE Censo 2022": [
+      "renda",
+      "densidade",
+      "favelas",
+      "bairros_indicadores"
+    ],
+    "Prefeitura de São Vicente": [
+      "coleta_seletiva"
+    ],
+    "CNES / Ministério da Saúde": [
+      "saude"
+    ],
+    "SOU Transportes (Bus2you)": [
+      "transporte_rotas",
+      "transporte_paradas"
+    ],
+    "OpenStreetMap (ODbL 1.0)": [
+      "areas_verdes",
+      "parques_lazer"
+    ]
+  },
+  "camadas": [
+    {
+      "camada": "bairros_indicadores",
+      "descricao": "Consolidado: todos os indicadores de desigualdade por bairro.",
+      "geometria": "POLYGON",
+      "feicoes": 30,
+      "geojson": "data/bairros_indicadores.geojson",
+      "shapefile": "data/shapefiles/bairros_indicadores/bairros_indicadores.shp",
+      "campos": [
+        {
+          "geojson": "bairro",
+          "dbf": "bairro",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "zona",
+          "dbf": "zona",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "area_km2",
+          "dbf": "area_km2",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "populacao",
+          "dbf": "populacao",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "densidade_hab_km2",
+          "dbf": "densidade_",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "renda_media_rs",
+          "dbf": "renda_medi",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "renda_sm",
+          "dbf": "renda_sm",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_setores",
+          "dbf": "n_setores",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "domicilios",
+          "dbf": "domicilios",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_esgoto_rede",
+          "dbf": "pct_esgoto",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_esgoto_inadeq",
+          "dbf": "pct_esgot1",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_agua_encanada",
+          "dbf": "pct_agua_e",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_lixo_coletado",
+          "dbf": "pct_lixo_c",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_sem_banheiro",
+          "dbf": "pct_sem_ba",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "taxa_alfabetiz",
+          "dbf": "taxa_alfab",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "n_nao_alfabetizados",
+          "dbf": "n_nao_alfa",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_preta_parda",
+          "dbf": "pct_preta_",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_branca",
+          "dbf": "pct_branca",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_criancas_0_9",
+          "dbf": "pct_crianc",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_idosos_60",
+          "dbf": "pct_idosos",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_com_calcada",
+          "dbf": "pct_com_ca",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_sem_calcada",
+          "dbf": "pct_sem_ca",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_sem_arboriz",
+          "dbf": "pct_sem_ar",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_sem_bueiro",
+          "dbf": "pct_sem_bu",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_sem_ilumin",
+          "dbf": "pct_sem_il",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "pct_via_pavim",
+          "dbf": "pct_via_pa",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "area_favela_m2",
+          "dbf": "area_favel",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "pct_area_favela",
+          "dbf": "pct_area_f",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_favelas",
+          "dbf": "n_favelas",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_saude",
+          "dbf": "n_saude",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_saude_atencao",
+          "dbf": "n_saude_at",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "saude_por_10k",
+          "dbf": "saude_por_",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "dist_saude_m",
+          "dbf": "dist_saude",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_paradas",
+          "dbf": "n_paradas",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "paradas_km2",
+          "dbf": "paradas_km",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_linhas",
+          "dbf": "n_linhas",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "partidas_semana",
+          "dbf": "partidas_s",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "partidas_por_1k",
+          "dbf": "partidas_p",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "area_verde_m2",
+          "dbf": "area_verde",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "pct_area_verde",
+          "dbf": "pct_area_v",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "m2_verde_hab",
+          "dbf": "m2_verde_h",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_equip_lazer",
+          "dbf": "n_equip_la",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "lazer_por_10k",
+          "dbf": "lazer_por_",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "coleta",
+          "dbf": "coleta",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "coleta_dias",
+          "dbf": "coleta_dia",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "coleta_freq",
+          "dbf": "coleta_fre",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "coleta_hora",
+          "dbf": "coleta_hor",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "coleta_turno",
+          "dbf": "coleta_tur",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "coleta_ruas",
+          "dbf": "coleta_rua",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "coleta_pag",
+          "dbf": "coleta_pag",
+          "tipo": "texto"
+        }
+      ]
+    },
+    {
+      "camada": "renda",
+      "descricao": "Renda média domiciliar por bairro (IBGE, Censo 2022).",
+      "geometria": "POLYGON",
+      "feicoes": 30,
+      "geojson": "data/renda.geojson",
+      "shapefile": "data/shapefiles/renda/renda.shp",
+      "campos": [
+        {
+          "geojson": "bairro",
+          "dbf": "bairro",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "renda_media_rs",
+          "dbf": "renda_medi",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "renda_sm",
+          "dbf": "renda_sm",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "populacao",
+          "dbf": "populacao",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_setores",
+          "dbf": "n_setores",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "densidade",
+      "descricao": "Densidade demográfica por bairro (IBGE, Censo 2022).",
+      "geometria": "POLYGON",
+      "feicoes": 30,
+      "geojson": "data/densidade.geojson",
+      "shapefile": "data/shapefiles/densidade/densidade.shp",
+      "campos": [
+        {
+          "geojson": "bairro",
+          "dbf": "bairro",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "populacao",
+          "dbf": "populacao",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "area_km2",
+          "dbf": "area_km2",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "densidade_hab_km2",
+          "dbf": "densidade_",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "favelas",
+      "descricao": "Favelas e Comunidades Urbanas (IBGE, Censo 2022).",
+      "geometria": "POLYGON",
+      "feicoes": 38,
+      "geojson": "data/favelas.geojson",
+      "shapefile": "data/shapefiles/favelas/favelas.shp",
+      "campos": [
+        {
+          "geojson": "cd_fcu",
+          "dbf": "cd_fcu",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "area_m2",
+          "dbf": "area_m2",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "saude",
+      "descricao": "Estabelecimentos de saúde georreferenciados (CNES/Ministério da Saúde).",
+      "geometria": "POINT",
+      "feicoes": 330,
+      "geojson": "data/saude.geojson",
+      "shapefile": "data/shapefiles/saude/saude.shp",
+      "campos": [
+        {
+          "geojson": "cnes",
+          "dbf": "cnes",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "tipo",
+          "dbf": "tipo",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "atencao",
+          "dbf": "atencao",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "bairro_cnes",
+          "dbf": "bairro_cne",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "endereco",
+          "dbf": "endereco",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "turno",
+          "dbf": "turno",
+          "tipo": "texto"
+        }
+      ]
+    },
+    {
+      "camada": "areas_verdes",
+      "descricao": "Áreas com vegetação: mangue, mata, praças, gramados (OSM).",
+      "geometria": "POLYGON",
+      "feicoes": 181,
+      "geojson": "data/areas_verdes.geojson",
+      "shapefile": "data/shapefiles/areas_verdes/areas_verdes.shp",
+      "campos": [
+        {
+          "geojson": "osm_id",
+          "dbf": "osm_id",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "osm_tipo",
+          "dbf": "osm_tipo",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "categoria",
+          "dbf": "categoria",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "e_verde",
+          "dbf": "e_verde",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "e_lazer",
+          "dbf": "e_lazer",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "acesso",
+          "dbf": "acesso",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "operador",
+          "dbf": "operador",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "area_m2",
+          "dbf": "area_m2",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "parques_lazer",
+      "descricao": "Equipamentos de lazer: praças, quadras, playgrounds (OSM).",
+      "geometria": "POLYGON",
+      "feicoes": 155,
+      "geojson": "data/parques_lazer.geojson",
+      "shapefile": "data/shapefiles/parques_lazer/parques_lazer.shp",
+      "campos": [
+        {
+          "geojson": "osm_id",
+          "dbf": "osm_id",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "osm_tipo",
+          "dbf": "osm_tipo",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "categoria",
+          "dbf": "categoria",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "e_verde",
+          "dbf": "e_verde",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "e_lazer",
+          "dbf": "e_lazer",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "acesso",
+          "dbf": "acesso",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "operador",
+          "dbf": "operador",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "area_m2",
+          "dbf": "area_m2",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "coleta_seletiva",
+      "descricao": "Situação da coleta seletiva por bairro (portal da Prefeitura).",
+      "geometria": "POLYGON",
+      "feicoes": 30,
+      "geojson": "data/coleta_seletiva.geojson",
+      "shapefile": "data/shapefiles/coleta_seletiva/coleta_seletiva.shp",
+      "campos": [
+        {
+          "geojson": "bairro",
+          "dbf": "bairro",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "atendido",
+          "dbf": "atendido",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "dias",
+          "dbf": "dias",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "turno",
+          "dbf": "turno",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "hora_limite",
+          "dbf": "hora_limit",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "freq_semana",
+          "dbf": "freq_seman",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_ruas",
+          "dbf": "n_ruas",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_condominios",
+          "dbf": "n_condomin",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "pagina_fonte",
+          "dbf": "pagina_fon",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "populacao",
+          "dbf": "populacao",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "transporte_rotas",
+      "descricao": "Traçado das linhas municipais de ônibus (SOU Transportes).",
+      "geometria": "POLYLINE",
+      "feicoes": 14,
+      "geojson": "data/transporte_rotas.geojson",
+      "shapefile": "data/shapefiles/transporte_rotas/transporte_rotas.shp",
+      "campos": [
+        {
+          "geojson": "route_id",
+          "dbf": "route_id",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "linha",
+          "dbf": "linha",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "partidas_semana",
+          "dbf": "partidas_s",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "n_sentidos",
+          "dbf": "n_sentidos",
+          "tipo": "numérico"
+        }
+      ]
+    },
+    {
+      "camada": "transporte_paradas",
+      "descricao": "Pontos de ônibus das linhas municipais (SOU Transportes).",
+      "geometria": "POINT",
+      "feicoes": 452,
+      "geojson": "data/transporte_paradas.geojson",
+      "shapefile": "data/shapefiles/transporte_paradas/transporte_paradas.shp",
+      "campos": [
+        {
+          "geojson": "stop_id",
+          "dbf": "stop_id",
+          "tipo": "numérico"
+        },
+        {
+          "geojson": "nome",
+          "dbf": "nome",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "linhas",
+          "dbf": "linhas",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "n_linhas",
+          "dbf": "n_linhas",
+          "tipo": "numérico"
+        }
+      ]
+    }
+  ]
+}

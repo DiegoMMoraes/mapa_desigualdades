@@ -1,0 +1,30 @@
+{
+  "name": "governo-aberto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -c-1",
+    "build": "node scripts/build-layers.js && node scripts/build-excel.js",
+    "build:layers": "node scripts/build-layers.js",
+    "build:excel": "node scripts/build-excel.js",
+    "coleta:prefeitura": "node scripts/scrape-coleta-seletiva.js",
+    "transporte:sou": "node scripts/scrape-sou-transportes.js",
+    "fontes:oficiais": "node scripts/fetch-fontes-oficiais.js",
+    "verdes:osm": "node scripts/fetch-osm-areas-verdes.js",
+    "coletar:tudo": "npm run coleta:prefeitura && npm run transporte:sou && npm run fontes:oficiais && npm run censo:agregados && npm run verdes:osm",
+    "censo:agregados": "node scripts/fetch-censo-agregados.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@turf/turf": "^7.3.5",
+    "exceljs": "^4.4.0",
+    "shapefile": "^0.6.6"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

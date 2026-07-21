@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mapa das Desigualdades — São Vicente</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <div class="app-header__brand">
+    <h1 class="wordmark">Mapa das <span>Desigualdades</span></h1>
+  </div>
+  <button id="toggle-panel" class="app-header__toggle" aria-label="Mostrar ou esconder painel">☰ Camadas</button>
+</header>
+
+<div class="app-body">
+  <aside id="panel" class="panel">
+    <section class="panel__section">
+      <h2>Indicadores</h2>
+      <div id="indicadores"></div>
+    </section>
+
+    <section class="panel__section">
+      <h2>Camadas</h2>
+      <div id="camadas"></div>
+    </section>
+
+    <section id="legend" class="panel__section panel__legend" hidden>
+      <h2>Legenda</h2>
+      <div id="legend-content"></div>
+    </section>
+  </aside>
+
+  <main id="map" class="map"></main>
+</div>
+
+<footer class="app-footer">
+  Módulo de mapa do Observatório — identidade visual do manual Coop Clima São Vicente. Fontes: IBGE Censo 2022, CNES/Ministério da Saúde, Prefeitura de São Vicente, SOU Transportes e OpenStreetMap.</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/layers-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

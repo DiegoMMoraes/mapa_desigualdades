@@ -1,0 +1,222 @@
+:root {
+  --verde: #007a4a;
+  --marrom: #874a33;
+  --azul: #00a3e0;
+  --laranja: #e87722;
+  --creme: #f9f3f0;
+  --tinta: #1a1e2c;
+  --borda: #e3d9d2;
+
+  --font-display: "Londrina Solid", "Roboto", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-body);
+  color: var(--tinta);
+  background: var(--creme);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(90deg, var(--creme) 0%, #fffaf7 100%);
+  border-bottom: 4px solid var(--verde);
+  box-shadow: 0 2px 0 var(--laranja);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin: 0;
+  color: var(--tinta);
+  letter-spacing: 0.02em;
+}
+.wordmark span { color: var(--verde); }
+
+.app-header__subtitle {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--marrom);
+  font-weight: 500;
+}
+
+.app-header__toggle {
+  display: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  background: var(--verde);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+
+/* ---------- Body layout ---------- */
+.app-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.panel {
+  width: 300px;
+  flex: 0 0 300px;
+  overflow-y: auto;
+  background: #fff;
+  border-right: 1px solid var(--borda);
+  padding: 1rem 1.1rem 2rem;
+}
+
+.panel__section {
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--borda);
+}
+.panel__section:last-child { border-bottom: none; }
+
+.panel__section h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--verde);
+  margin: 0 0 0.3rem;
+}
+
+.panel__hint {
+  font-size: 0.78rem;
+  color: #6b6560;
+  margin: 0 0 0.7rem;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.2rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.control:hover { background: var(--creme); }
+.control input { accent-color: var(--verde); width: 16px; height: 16px; flex: none; }
+
+.control--disabled { cursor: not-allowed; color: #a39c96; }
+.control--disabled:hover { background: none; }
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: none;
+  background: var(--c, var(--verde));
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+.legend-caption {
+  font-size: 0.78rem;
+  margin-bottom: 0.4rem;
+  color: #6b6560;
+}
+
+.panel__legend h2 { color: var(--marrom); }
+#legend-content { font-size: 0.82rem; }
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.legend-swatch {
+  width: 16px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.15);
+  flex: none;
+}
+
+/* ---------- Map ---------- */
+.map {
+  flex: 1;
+  min-width: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  font-family: var(--font-body);
+  border-radius: 10px;
+}
+.popup-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--verde);
+  margin: 0 0 0.3rem;
+}
+.popup-row { font-size: 0.85rem; margin: 0.1rem 0; }
+.popup-row strong { color: var(--marrom); }
+.popup-note {
+  font-size: 0.75rem;
+  color: #8a827c;
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  color: #8a827c;
+  background: #fff;
+  border-top: 1px solid var(--borda);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .app-header__toggle { display: inline-block; }
+  .panel {
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+  .panel.is-open { transform: translateX(0); }
+}
+
+.control__texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.control__fonte {
+  font-size: 0.68rem;
+  color: #8a827c;
+  font-weight: 400;
+}
+.legend-fonte {
+  font-size: 0.68rem;
+  color: #8a827c;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
