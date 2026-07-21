@@ -45,11 +45,13 @@ const ARQUIVOS = [
 const VARS = {
   domicilio1: {
     V00001: "domicilios_total",
+  },
+  domicilio2: {
+    // Apesar de serem "características do domicílio", as variáveis de água
+    // ficam no arquivo Parte 2 — a Parte 1 vai só até V00089.
     V00199: "agua_encanada_dentro",
     V00200: "agua_encanada_terreno",
     V00201: "agua_nao_encanada",
-  },
-  domicilio2: {
     V00309: "esgoto_rede_geral",
     V00310: "esgoto_fossa_ligada_rede",
     V00311: "esgoto_fossa_nao_ligada",
@@ -83,12 +85,17 @@ const VARS = {
     V01040: "idade_60_69",
     V01041: "idade_70_mais",
   },
+  // Cada quesito do entorno tem SIM / NÃO / NÃO DECLARADO. Trazemos os três para
+  // usar como denominador o total efetivamente pesquisado, e não o total de
+  // domicílios do bairro — o módulo de entorno só é aplicado em setores sorteados.
   entorno: {
-    V05006: "entorno_via_pavimentada",
-    V05021: "entorno_com_calcada",
-    V05030: "entorno_sem_arvores",
-    V05010: "entorno_sem_bueiro",
-    V05013: "entorno_sem_iluminacao",
+    V05006: "pav_sim", V05007: "pav_nao", V05008: "pav_nd",
+    V05009: "bueiro_sim", V05010: "bueiro_nao", V05011: "bueiro_nd",
+    V05012: "ilum_sim", V05013: "ilum_nao", V05014: "ilum_nd",
+    V05021: "calcada_sim", V05022: "calcada_nao", V05023: "calcada_nd",
+    V05027: "rampa_sim", V05028: "rampa_nao", V05029: "rampa_nd",
+    V05030: "arb_sem", V05031: "arb_1_2", V05032: "arb_3_4",
+    V05033: "arb_5mais", V05034: "arb_saltado",
   },
 };
 
@@ -194,9 +201,19 @@ async function main() {
     );
     const moradores = dem.moradores;
 
-    // O bloco de entorno só é aplicado em setores sorteados; a base do
-    // percentual é o total de domicílios pesquisados, não o total do bairro.
-    const entornoBase = soma(ent.entorno_via_pavimentada, ent.entorno_sem_arvores) ? domicilios : null;
+    // Cada quesito tem seu próprio denominador (SIM + NÃO + NÃO DECLARADO).
+    const baseEnt = (...vs) => {
+      const t = soma(...vs);
+      return t && t > 0 ? t : null;
+    };
+    const basePav = baseEnt(ent.pav_sim, ent.pav_nao, ent.pav_nd);
+    const baseBueiro = baseEnt(ent.bueiro_sim, ent.bueiro_nao, ent.bueiro_nd);
+    const baseIlum = baseEnt(ent.ilum_sim, ent.ilum_nao, ent.ilum_nd);
+    const baseCalcada = baseEnt(ent.calcada_sim, ent.calcada_nao, ent.calcada_nd);
+    const baseRampa = baseEnt(ent.rampa_sim, ent.rampa_nao, ent.rampa_nd);
+    const baseArb = baseEnt(
+      ent.arb_sem, ent.arb_1_2, ent.arb_3_4, ent.arb_5mais, ent.arb_saltado
+    );
 
     return {
       cd_bairro: cd,
@@ -210,7 +227,7 @@ async function main() {
         domicilios
       ),
       pct_sem_banheiro: pct(d2.sem_banheiro, domicilios),
-      pct_agua_encanada: pct(d1.agua_encanada_dentro, domicilios),
+      pct_agua_encanada: pct(d2.agua_encanada_dentro, domicilios),
       pct_lixo_coletado: pct(soma(d2.lixo_coletado_porta, d2.lixo_cacamba), domicilios),
       pct_lixo_inadequado: pct(
         soma(d2.lixo_queimado, d2.lixo_enterrado, d2.lixo_terreno_baldio, d2.lixo_outro),
@@ -229,16 +246,31 @@ async function main() {
       pct_criancas_0_9: pct(soma(dem.idade_0_4, dem.idade_5_9), moradores),
       pct_idosos_60mais: pct(soma(dem.idade_60_69, dem.idade_70_mais), moradores),
 
-      // --- entorno urbano
-      pct_via_pavimentada: pct(ent.entorno_via_pavimentada, entornoBase),
-      pct_com_calcada: pct(ent.entorno_com_calcada, entornoBase),
-      pct_sem_arborizacao: pct(ent.entorno_sem_arvores, entornoBase),
-      pct_sem_bueiro: pct(ent.entorno_sem_bueiro, entornoBase),
-      pct_sem_iluminacao: pct(ent.entorno_sem_iluminacao, entornoBase),
+      // --- entorno urbano (cada um sobre o próprio total pesquisado)
+      pct_via_pavimentada: pct(ent.pav_sim, basePav),
+      pct_com_calcada: pct(ent.calcada_sim, baseCalcada),
+      pct_sem_calcada: pct(ent.calcada_nao, baseCalcada),
+      pct_sem_arborizacao: pct(ent.arb_sem, baseArb),
+      pct_sem_bueiro: pct(ent.bueiro_nao, baseBueiro),
+      pct_sem_iluminacao: pct(ent.ilum_nao, baseIlum),
+      pct_sem_rampa: pct(ent.rampa_nao, baseRampa),
+      domicilios_entorno: baseCalcada,
     };
   });
 
   bairros.sort((a, b) => a.bairro.localeCompare(b.bairro, "pt-BR"));
+
+  // Um indicador nulo em TODOS os bairros quase nunca é dado suprimido: é
+  // variável lida do arquivo errado ou nome trocado no cálculo. Já aconteceu
+  // duas vezes (água ficou nula por ser buscada na Parte 1 e depois por ser
+  // lida de `d1` em vez de `d2`), e passou despercebido nas duas.
+  const camposIndicador = Object.keys(bairros[0]).filter((k) => k.startsWith("pct_") || k.startsWith("taxa_"));
+  const sempreNulos = camposIndicador.filter((k) => bairros.every((b) => b[k] === null));
+  if (sempreNulos.length) {
+    console.error(`\n[ERRO] indicadores nulos em todos os bairros: ${sempreNulos.join(", ")}`);
+    console.error("       confira em qual arquivo a variável está e de onde o cálculo a lê.");
+    process.exitCode = 1;
+  }
 
   const dir = path.join(BASES, "CENSO AGREGADOS");
   fs.mkdirSync(dir, { recursive: true });

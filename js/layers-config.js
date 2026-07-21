@@ -125,7 +125,30 @@ const LAYERS_CONFIG = {
         ["Partidas por semana", fmt(p.partidas_semana)],
         ["Por mil habitantes", p.partidas_por_1k],
         ["Linhas que servem", p.n_linhas],
-        ["Pontos de ônibus", p.n_paradas],
+        ["Pontos de ônibus", `${p.n_paradas} (${fmt(p.paradas_km2)} por km²)`],
+      ],
+    },
+
+    faixa_etaria: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Crianças de 0 a 9 anos",
+      fonte: FONTES.ibge,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "pct_criancas_0_9",
+      scale: { min: 6, max: 19, colorFrom: "#fdf4ec", colorTo: "#d05a1e" },
+      legendTitle: "% da população com 0 a 9 anos",
+      legendSteps: [
+        { value: 6, label: "6%" },
+        { value: 10, label: "10%" },
+        { value: 14, label: "14%" },
+        { value: 19, label: "19% ou mais" },
+      ],
+      popupRows: (p) => [
+        ["Crianças de 0 a 9 anos", `${p.pct_criancas_0_9}%`],
+        ["Idosos de 60 anos ou mais", `${p.pct_idosos_60}%`],
+        ["População", fmt(p.populacao)],
+        ["Renda média", `R$ ${fmt(p.renda_media_rs)}/mês`],
       ],
     },
 
@@ -173,6 +196,7 @@ const LAYERS_CONFIG = {
         ["Esgotamento inadequado", `${p.pct_esgoto_inadeq}%`],
         ["Água encanada dentro do domicílio", `${p.pct_agua_encanada}%`],
         ["Lixo coletado", `${p.pct_lixo_coletado}%`],
+        ["Domicílios sem banheiro", `${p.pct_sem_banheiro}%`],
         ["Domicílios", fmt(p.domicilios)],
       ],
     },
@@ -220,6 +244,12 @@ const LAYERS_CONFIG = {
         ["Sem bueiro", `${p.pct_sem_bueiro}%`],
         ["Sem iluminação pública", `${p.pct_sem_ilumin}%`],
         ["Via pavimentada", `${p.pct_via_pavim}%`],
+        ["Sem rampa para cadeirante", `${p.pct_sem_rampa}%`],
+        // Resumo por bairro das camadas de área verde e lazer, que sozinhas só
+        // mostram os polígonos individuais.
+        ["Área verde do bairro", `${p.pct_area_verde}%`],
+        ["Área verde por habitante", `${fmt(p.m2_verde_hab)} m²`],
+        ["Equipamentos de lazer", `${p.n_equip_lazer} (${fmt(p.lazer_por_10k)} por 10 mil hab)`],
       ],
     },
 
@@ -240,6 +270,7 @@ const LAYERS_CONFIG = {
       popupRows: (p) => [
         ["Coleta seletiva", p.coleta],
         ["Dias", p.coleta_dias || "—"],
+        ["Coletas por semana", p.coleta_freq || "—"],
         ["Turno", p.coleta_turno || "—"],
         ["Colocar o lixo até", p.coleta_hora || "—"],
         ["Ruas atendidas", p.coleta_ruas || 0],

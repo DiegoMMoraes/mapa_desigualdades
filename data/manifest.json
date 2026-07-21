@@ -160,6 +160,16 @@
           "tipo": "texto"
         },
         {
+          "geojson": "pct_sem_rampa",
+          "dbf": "pct_sem_ra",
+          "tipo": "texto"
+        },
+        {
+          "geojson": "domicilios_entorno",
+          "dbf": "domicilio1",
+          "tipo": "texto"
+        },
+        {
           "geojson": "pct_via_pavim",
           "dbf": "pct_via_pa",
           "tipo": "texto"

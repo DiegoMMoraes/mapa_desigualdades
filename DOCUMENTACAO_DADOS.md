@@ -265,21 +265,28 @@ precisar reagregar setor a setor. São 29 bairros (a área continental não tem
 |---|---|---|
 | Esgoto em rede | V00309 + V00310 | ÷ domicílios (V00001) |
 | Esgotamento inadequado | V00312 a V00315 | fossa rudimentar, vala, corpo d'água, outra |
-| Água encanada no domicílio | V00199 | ÷ domicílios |
+| Água encanada no domicílio | V00199 *(arquivo Parte 2, não Parte 1)* | ÷ domicílios |
 | Lixo coletado | V00397 + V00398 | porta a porta + caçamba |
 | Sem banheiro | V00316 | ÷ domicílios |
 | Alfabetização (15+) | V00900 ÷ (V00900 + V00901) | sabe ler ÷ total 15+ |
 | População preta ou parda | (V01318 + V01320) ÷ ΣV01317–V01321 | — |
 | Crianças 0–9 / idosos 60+ | V01031 + V01032 / V01040 + V01041 | ÷ moradores (V01006) |
-| Entorno: calçada, arborização, bueiro, iluminação, pavimentação | V05021, V05030, V05010, V05013, V05006 | ÷ domicílios |
+| Entorno: calçada, arborização, bueiro, iluminação, pavimentação, rampa | V05006–V05034 | ÷ total pesquisado de cada quesito (SIM + NÃO + NÃO DECLARADO) |
 
 **Notas de leitura**
 
 - O IBGE usa `X` para dado suprimido por sigilo estatístico; o script converte
   para nulo em vez de zero — tratar como zero inventaria "ausência de serviço"
   onde na verdade não há dado divulgado.
-- O bloco de **entorno** é levantado apenas em setores sorteados, então os
-  percentuais são de cobertura amostral, não censo pleno daquele quesito.
+- O bloco de **entorno** é levantado apenas em setores sorteados. Cada quesito
+  tem SIM / NÃO / NÃO DECLARADO, e o denominador usado é a soma dos três — ou
+  seja, o total efetivamente pesquisado. Usar o total de domicílios do bairro
+  subestimava os percentuais (em Itararé, base de 4.064 contra 4.358 domicílios).
+- Duas variáveis de água ficaram nulas em todas as versões iniciais: primeiro
+  porque V00199 foi procurada no arquivo Parte 1 (que só vai até V00089) e depois
+  porque o cálculo continuou lendo do objeto da Parte 1. O script agora **falha
+  com erro** se qualquer indicador sair nulo em todos os bairros, já que isso
+  quase nunca é sigilo estatístico e quase sempre é variável no arquivo errado.
 - Os arquivos de agregados **não têm coluna `CD_MUN`** (só o `basico` tem). O
   filtro do município usa o prefixo do `CD_BAIRRO` (`3551009…`). Uma primeira
   versão filtrava por `CD_MUN` e devolvia todos os valores nulos silenciosamente.

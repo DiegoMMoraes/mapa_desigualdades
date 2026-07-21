@@ -441,12 +441,12 @@ async function main() {
       pct_idosos_60: c.pct_idosos_60mais ?? null,
       // entorno urbano (IBGE)
       pct_com_calcada: c.pct_com_calcada ?? null,
-      pct_sem_calcada: c.pct_com_calcada === null || c.pct_com_calcada === undefined
-        ? null
-        : round(100 - c.pct_com_calcada),
+      pct_sem_calcada: c.pct_sem_calcada ?? null,
       pct_sem_arboriz: c.pct_sem_arborizacao ?? null,
       pct_sem_bueiro: c.pct_sem_bueiro ?? null,
       pct_sem_ilumin: c.pct_sem_iluminacao ?? null,
+      pct_sem_rampa: c.pct_sem_rampa ?? null,
+      domicilios_entorno: c.domicilios_entorno ?? null,
       pct_via_pavim: c.pct_via_pavimentada ?? null,
       // vulnerabilidade
       area_favela_m2: Math.round(areaFavela),
@@ -580,6 +580,7 @@ async function main() {
     ["pct_sem_arboriz", "% domicílios sem arborização"],
     ["pct_sem_bueiro", "% domicílios sem bueiro"],
     ["pct_sem_ilumin", "% domicílios sem iluminação pública"],
+    ["pct_sem_rampa", "% sem rampa para cadeirante"],
     ["taxa_alfabetiz", "taxa de alfabetização (15+)"],
     ["pct_preta_parda", "% população preta ou parda"],
     ["pct_criancas_0_9", "% de crianças de 0 a 9 anos"],

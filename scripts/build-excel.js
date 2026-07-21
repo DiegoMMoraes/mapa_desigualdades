@@ -100,6 +100,7 @@ function main() {
     { header: "Sem arborização (%)", key: "pct_sem_arboriz", width: 12, style: { numFmt: "0.0" } },
     { header: "Sem bueiro (%)", key: "pct_sem_bueiro", width: 11, style: { numFmt: "0.0" } },
     { header: "Sem iluminação (%)", key: "pct_sem_ilumin", width: 12, style: { numFmt: "0.0" } },
+    { header: "Sem rampa p/ cadeirante (%)", key: "pct_sem_rampa", width: 14, style: { numFmt: "0.0" } },
   ];
   bairros.forEach((b) => ws.addRow(b));
   estilizar(ws);

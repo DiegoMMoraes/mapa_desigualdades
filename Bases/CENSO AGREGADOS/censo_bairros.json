@@ -10,7 +10,7 @@
       "pct_esgoto_rede": 99.1,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.89,
       "pct_lixo_coletado": 99.77,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 98.31,
@@ -21,9 +21,12 @@
       "pct_idosos_60mais": 18.6,
       "pct_via_pavimentada": 97.78,
       "pct_com_calcada": 98,
+      "pct_sem_calcada": 2,
       "pct_sem_arborizacao": 38.96,
       "pct_sem_bueiro": 2.22,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 79.5,
+      "domicilios_entorno": 2654
     },
     {
       "cd_bairro": "3551009003",
@@ -32,7 +35,7 @@
       "pct_esgoto_rede": 99.94,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 99.92,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 99.72,
@@ -43,9 +46,12 @@
       "pct_idosos_60mais": 29.53,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 100,
+      "pct_sem_calcada": 0,
       "pct_sem_arborizacao": 3.3,
       "pct_sem_bueiro": 0,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 72.56,
+      "domicilios_entorno": 4822
     },
     {
       "cd_bairro": "3551009010",
@@ -54,7 +60,7 @@
       "pct_esgoto_rede": 99.67,
       "pct_esgoto_inadequado": 0.1,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.98,
       "pct_lixo_coletado": 99.79,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 96.85,
@@ -63,11 +69,14 @@
       "pct_branca": 48.89,
       "pct_criancas_0_9": 11.74,
       "pct_idosos_60mais": 19.05,
-      "pct_via_pavimentada": 95.23,
-      "pct_com_calcada": 90.74,
-      "pct_sem_arborizacao": 59.58,
-      "pct_sem_bueiro": 6.44,
-      "pct_sem_iluminacao": 0.92
+      "pct_via_pavimentada": 98.27,
+      "pct_com_calcada": 93.63,
+      "pct_sem_calcada": 6.37,
+      "pct_sem_arborizacao": 61.48,
+      "pct_sem_bueiro": 6.64,
+      "pct_sem_iluminacao": 0.95,
+      "pct_sem_rampa": 78.16,
+      "domicilios_entorno": 5042
     },
     {
       "cd_bairro": "3551009001",
@@ -76,7 +85,7 @@
       "pct_esgoto_rede": 99.88,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.95,
       "pct_lixo_coletado": 99.76,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 99.16,
@@ -87,9 +96,12 @@
       "pct_idosos_60mais": 28.34,
       "pct_via_pavimentada": 99.93,
       "pct_com_calcada": 99.9,
+      "pct_sem_calcada": 0.1,
       "pct_sem_arborizacao": 52.31,
       "pct_sem_bueiro": 28.6,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 23.87,
+      "domicilios_entorno": 4185
     },
     {
       "cd_bairro": "3551009014",
@@ -98,7 +110,7 @@
       "pct_esgoto_rede": 95.81,
       "pct_esgoto_inadequado": 3.6,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.75,
       "pct_lixo_coletado": 99.88,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.59,
@@ -109,9 +121,12 @@
       "pct_idosos_60mais": 17.51,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 99.38,
+      "pct_sem_calcada": 0.62,
       "pct_sem_arborizacao": 31.9,
       "pct_sem_bueiro": 4.65,
-      "pct_sem_iluminacao": 1.18
+      "pct_sem_iluminacao": 1.18,
+      "pct_sem_rampa": 56.59,
+      "domicilios_entorno": 11034
     },
     {
       "cd_bairro": "3551009016",
@@ -120,7 +135,7 @@
       "pct_esgoto_rede": 96.84,
       "pct_esgoto_inadequado": 2.49,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.78,
       "pct_lixo_coletado": 99.87,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.54,
@@ -131,9 +146,12 @@
       "pct_idosos_60mais": 17.87,
       "pct_via_pavimentada": 98.42,
       "pct_com_calcada": 95.2,
+      "pct_sem_calcada": 4.8,
       "pct_sem_arborizacao": 40.29,
       "pct_sem_bueiro": 9.47,
-      "pct_sem_iluminacao": 2.37
+      "pct_sem_iluminacao": 2.37,
+      "pct_sem_rampa": 84.24,
+      "domicilios_entorno": 3167
     },
     {
       "cd_bairro": "3551009002",
@@ -142,7 +160,7 @@
       "pct_esgoto_rede": 99.71,
       "pct_esgoto_inadequado": 0.08,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 99.8,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 99.48,
@@ -151,11 +169,14 @@
       "pct_branca": 65.38,
       "pct_criancas_0_9": 5.68,
       "pct_idosos_60mais": 30.5,
-      "pct_via_pavimentada": 97.81,
-      "pct_com_calcada": 97.82,
-      "pct_sem_arborizacao": 20.02,
-      "pct_sem_bueiro": 7.61,
-      "pct_sem_iluminacao": 0
+      "pct_via_pavimentada": 99.72,
+      "pct_com_calcada": 99.74,
+      "pct_sem_calcada": 0.24,
+      "pct_sem_arborizacao": 20.41,
+      "pct_sem_bueiro": 7.76,
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 9.6,
+      "domicilios_entorno": 5810
     },
     {
       "cd_bairro": "3551009020",
@@ -164,7 +185,7 @@
       "pct_esgoto_rede": 99.8,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.97,
       "pct_lixo_coletado": 100,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 96.79,
@@ -175,9 +196,12 @@
       "pct_idosos_60mais": 20.42,
       "pct_via_pavimentada": 99.97,
       "pct_com_calcada": 100,
+      "pct_sem_calcada": 0,
       "pct_sem_arborizacao": 45.94,
       "pct_sem_bueiro": 74.35,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 86.36,
+      "domicilios_entorno": 3973
     },
     {
       "cd_bairro": "3551009004",
@@ -186,7 +210,7 @@
       "pct_esgoto_rede": 97.93,
       "pct_esgoto_inadequado": 1.01,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.91,
       "pct_lixo_coletado": 98.88,
       "pct_lixo_inadequado": 0.92,
       "taxa_alfabetizacao": 99.43,
@@ -195,11 +219,14 @@
       "pct_branca": 68.6,
       "pct_criancas_0_9": 6.68,
       "pct_idosos_60mais": 30.03,
-      "pct_via_pavimentada": 92.2,
-      "pct_com_calcada": 90.18,
-      "pct_sem_arborizacao": 17.44,
-      "pct_sem_bueiro": 5.62,
-      "pct_sem_iluminacao": 0
+      "pct_via_pavimentada": 98.87,
+      "pct_com_calcada": 96.7,
+      "pct_sem_calcada": 3.3,
+      "pct_sem_arborizacao": 18.7,
+      "pct_sem_bueiro": 6.03,
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 57.48,
+      "domicilios_entorno": 4064
     },
     {
       "cd_bairro": "3551009019",
@@ -208,7 +235,7 @@
       "pct_esgoto_rede": 99.07,
       "pct_esgoto_inadequado": 0.56,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.49,
       "pct_lixo_coletado": 99.95,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.52,
@@ -217,11 +244,14 @@
       "pct_branca": 53.23,
       "pct_criancas_0_9": 11.45,
       "pct_idosos_60mais": 17.6,
-      "pct_via_pavimentada": 98.32,
-      "pct_com_calcada": 98.56,
-      "pct_sem_arborizacao": 9.51,
+      "pct_via_pavimentada": 98.88,
+      "pct_com_calcada": 99.11,
+      "pct_sem_calcada": 0.89,
+      "pct_sem_arborizacao": 9.56,
       "pct_sem_bueiro": 0.47,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 11.06,
+      "domicilios_entorno": 2134
     },
     {
       "cd_bairro": "3551009008",
@@ -230,7 +260,7 @@
       "pct_esgoto_rede": 98.71,
       "pct_esgoto_inadequado": 0.97,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 99.92,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.67,
@@ -241,9 +271,12 @@
       "pct_idosos_60mais": 20.44,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 100,
+      "pct_sem_calcada": 0,
       "pct_sem_arborizacao": 34.47,
       "pct_sem_bueiro": 2.35,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 70.23,
+      "domicilios_entorno": 1236
     },
     {
       "cd_bairro": "3551009006",
@@ -252,7 +285,7 @@
       "pct_esgoto_rede": 98.57,
       "pct_esgoto_inadequado": 0.87,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 99.76,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 98.55,
@@ -263,9 +296,12 @@
       "pct_idosos_60mais": 21.86,
       "pct_via_pavimentada": 98.73,
       "pct_com_calcada": 89.14,
+      "pct_sem_calcada": 10.86,
       "pct_sem_arborizacao": 30.29,
       "pct_sem_bueiro": 18.16,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 87.71,
+      "domicilios_entorno": 1261
     },
     {
       "cd_bairro": "3551009031",
@@ -274,7 +310,7 @@
       "pct_esgoto_rede": 64.36,
       "pct_esgoto_inadequado": 13.23,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.6,
       "pct_lixo_coletado": 99.48,
       "pct_lixo_inadequado": 0.2,
       "taxa_alfabetizacao": 94.3,
@@ -283,11 +319,14 @@
       "pct_branca": 34.36,
       "pct_criancas_0_9": 15.2,
       "pct_idosos_60mais": 9.74,
-      "pct_via_pavimentada": 51.37,
-      "pct_com_calcada": 63.56,
-      "pct_sem_arborizacao": 52.32,
-      "pct_sem_bueiro": 31.22,
-      "pct_sem_iluminacao": 15.94
+      "pct_via_pavimentada": 51.5,
+      "pct_com_calcada": 63.72,
+      "pct_sem_calcada": 36.28,
+      "pct_sem_arborizacao": 52.45,
+      "pct_sem_bueiro": 31.3,
+      "pct_sem_iluminacao": 15.98,
+      "pct_sem_rampa": 62.94,
+      "domicilios_entorno": 8410
     },
     {
       "cd_bairro": "3551009023",
@@ -296,7 +335,7 @@
       "pct_esgoto_rede": 98.89,
       "pct_esgoto_inadequado": 0.12,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.9,
       "pct_lixo_coletado": 99.57,
       "pct_lixo_inadequado": 0.38,
       "taxa_alfabetizacao": 95.25,
@@ -307,9 +346,12 @@
       "pct_idosos_60mais": 9.84,
       "pct_via_pavimentada": 94.16,
       "pct_com_calcada": 94.85,
+      "pct_sem_calcada": 5.06,
       "pct_sem_arborizacao": 30.2,
       "pct_sem_bueiro": 14.52,
-      "pct_sem_iluminacao": 9.67
+      "pct_sem_iluminacao": 9.67,
+      "pct_sem_rampa": 65.54,
+      "domicilios_entorno": 5772
     },
     {
       "cd_bairro": "3551009011",
@@ -318,7 +360,7 @@
       "pct_esgoto_rede": 81.17,
       "pct_esgoto_inadequado": 14.91,
       "pct_sem_banheiro": 0.03,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 97.85,
       "pct_lixo_coletado": 99.6,
       "pct_lixo_inadequado": 0.17,
       "taxa_alfabetizacao": 94.88,
@@ -327,11 +369,14 @@
       "pct_branca": 37.3,
       "pct_criancas_0_9": 14.63,
       "pct_idosos_60mais": 13.37,
-      "pct_via_pavimentada": 90.21,
-      "pct_com_calcada": 85.58,
-      "pct_sem_arborizacao": 35.04,
-      "pct_sem_bueiro": 18.27,
-      "pct_sem_iluminacao": 1.54
+      "pct_via_pavimentada": 91.45,
+      "pct_com_calcada": 86.76,
+      "pct_sem_calcada": 13.22,
+      "pct_sem_arborizacao": 35.53,
+      "pct_sem_bueiro": 18.53,
+      "pct_sem_iluminacao": 1.56,
+      "pct_sem_rampa": 75.35,
+      "domicilios_entorno": 9548
     },
     {
       "cd_bairro": "3551009025",
@@ -340,7 +385,7 @@
       "pct_esgoto_rede": 92,
       "pct_esgoto_inadequado": 7.56,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.93,
       "pct_lixo_coletado": 99.78,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 94.34,
@@ -351,9 +396,12 @@
       "pct_idosos_60mais": 12.69,
       "pct_via_pavimentada": 94.47,
       "pct_com_calcada": 91.05,
+      "pct_sem_calcada": 8.95,
       "pct_sem_arborizacao": 27.71,
       "pct_sem_bueiro": 14.55,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 79.71,
+      "domicilios_entorno": 1375
     },
     {
       "cd_bairro": "3551009018",
@@ -362,7 +410,7 @@
       "pct_esgoto_rede": 96.6,
       "pct_esgoto_inadequado": 2.73,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.83,
       "pct_lixo_coletado": 99.68,
       "pct_lixo_inadequado": 0.15,
       "taxa_alfabetizacao": 96.79,
@@ -371,11 +419,14 @@
       "pct_branca": 47.25,
       "pct_criancas_0_9": 11.13,
       "pct_idosos_60mais": 20.01,
-      "pct_via_pavimentada": 99.33,
-      "pct_com_calcada": 92.55,
-      "pct_sem_arborizacao": 48.03,
-      "pct_sem_bueiro": 1.82,
-      "pct_sem_iluminacao": 0
+      "pct_via_pavimentada": 99.89,
+      "pct_com_calcada": 93.07,
+      "pct_sem_calcada": 6.93,
+      "pct_sem_arborizacao": 48.3,
+      "pct_sem_bueiro": 1.83,
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 59.93,
+      "domicilios_entorno": 5356
     },
     {
       "cd_bairro": "3551009021",
@@ -384,7 +435,7 @@
       "pct_esgoto_rede": 93.41,
       "pct_esgoto_inadequado": 6.48,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.98,
       "pct_lixo_coletado": 99.98,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97,
@@ -395,9 +446,12 @@
       "pct_idosos_60mais": 13.21,
       "pct_via_pavimentada": 83.29,
       "pct_com_calcada": 96.61,
+      "pct_sem_calcada": 3.39,
       "pct_sem_arborizacao": 14.22,
       "pct_sem_bueiro": 15.55,
-      "pct_sem_iluminacao": 0.74
+      "pct_sem_iluminacao": 0.74,
+      "pct_sem_rampa": 58.7,
+      "domicilios_entorno": 4458
     },
     {
       "cd_bairro": "3551009024",
@@ -406,7 +460,7 @@
       "pct_esgoto_rede": 99.23,
       "pct_esgoto_inadequado": 0.48,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.88,
       "pct_lixo_coletado": 99.86,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 96.44,
@@ -415,11 +469,14 @@
       "pct_branca": 40.77,
       "pct_criancas_0_9": 12.71,
       "pct_idosos_60mais": 16.14,
-      "pct_via_pavimentada": 98.68,
-      "pct_com_calcada": 99.37,
-      "pct_sem_arborizacao": 11.45,
-      "pct_sem_bueiro": 6.86,
-      "pct_sem_iluminacao": 0.07
+      "pct_via_pavimentada": 98.84,
+      "pct_com_calcada": 99.54,
+      "pct_sem_calcada": 0.46,
+      "pct_sem_arborizacao": 11.47,
+      "pct_sem_bueiro": 6.87,
+      "pct_sem_iluminacao": 0.07,
+      "pct_sem_rampa": 86.04,
+      "domicilios_entorno": 4149
     },
     {
       "cd_bairro": "3551009012",
@@ -428,7 +485,7 @@
       "pct_esgoto_rede": 99.44,
       "pct_esgoto_inadequado": 0.13,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.97,
       "pct_lixo_coletado": 99.87,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.68,
@@ -437,11 +494,14 @@
       "pct_branca": 51.7,
       "pct_criancas_0_9": 11.41,
       "pct_idosos_60mais": 17.88,
-      "pct_via_pavimentada": 99.97,
-      "pct_com_calcada": 98.9,
-      "pct_sem_arborizacao": 41.59,
+      "pct_via_pavimentada": 100,
+      "pct_com_calcada": 98.93,
+      "pct_sem_calcada": 1.07,
+      "pct_sem_arborizacao": 41.6,
       "pct_sem_bueiro": 0,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 65.08,
+      "domicilios_entorno": 3728
     },
     {
       "cd_bairro": "3551009027",
@@ -450,7 +510,7 @@
       "pct_esgoto_rede": 61.24,
       "pct_esgoto_inadequado": 26.19,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 92.92,
       "pct_lixo_coletado": 95.3,
       "pct_lixo_inadequado": 4.29,
       "taxa_alfabetizacao": 95.26,
@@ -459,11 +519,14 @@
       "pct_branca": 35.18,
       "pct_criancas_0_9": 16.92,
       "pct_idosos_60mais": 7.57,
-      "pct_via_pavimentada": 54.1,
-      "pct_com_calcada": 50.65,
-      "pct_sem_arborizacao": 84.84,
-      "pct_sem_bueiro": 41.4,
-      "pct_sem_iluminacao": 51.41
+      "pct_via_pavimentada": 54.16,
+      "pct_com_calcada": 50.71,
+      "pct_sem_calcada": 49.24,
+      "pct_sem_arborizacao": 84.93,
+      "pct_sem_bueiro": 41.44,
+      "pct_sem_iluminacao": 51.47,
+      "pct_sem_rampa": 39.59,
+      "domicilios_entorno": 3822
     },
     {
       "cd_bairro": "3551009026",
@@ -472,7 +535,7 @@
       "pct_esgoto_rede": 92.79,
       "pct_esgoto_inadequado": 5.97,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.78,
       "pct_lixo_coletado": 99.89,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 95.57,
@@ -483,9 +546,12 @@
       "pct_idosos_60mais": 11.43,
       "pct_via_pavimentada": 91.97,
       "pct_com_calcada": 91.81,
+      "pct_sem_calcada": 8.19,
       "pct_sem_arborizacao": 45.72,
       "pct_sem_bueiro": 19.85,
-      "pct_sem_iluminacao": 0.87
+      "pct_sem_iluminacao": 0.87,
+      "pct_sem_rampa": 65.18,
+      "domicilios_entorno": 1844
     },
     {
       "cd_bairro": "3551009017",
@@ -494,7 +560,7 @@
       "pct_esgoto_rede": 87.37,
       "pct_esgoto_inadequado": 11.76,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.49,
       "pct_lixo_coletado": 99.57,
       "pct_lixo_inadequado": 0.15,
       "taxa_alfabetizacao": 94.69,
@@ -505,9 +571,12 @@
       "pct_idosos_60mais": 12.8,
       "pct_via_pavimentada": 85.51,
       "pct_com_calcada": 80.29,
+      "pct_sem_calcada": 19.66,
       "pct_sem_arborizacao": 70.29,
       "pct_sem_bueiro": 28.49,
-      "pct_sem_iluminacao": 3.45
+      "pct_sem_iluminacao": 3.45,
+      "pct_sem_rampa": 77.8,
+      "domicilios_entorno": 8760
     },
     {
       "cd_bairro": "3551009009",
@@ -516,7 +585,7 @@
       "pct_esgoto_rede": 99.81,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.81,
       "pct_lixo_coletado": 99.9,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 98.71,
@@ -527,9 +596,12 @@
       "pct_idosos_60mais": 21.77,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 99.19,
+      "pct_sem_calcada": 0.81,
       "pct_sem_arborizacao": 42.19,
       "pct_sem_bueiro": 0,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 77.28,
+      "domicilios_entorno": 2086
     },
     {
       "cd_bairro": "3551009013",
@@ -538,7 +610,7 @@
       "pct_esgoto_rede": 91.68,
       "pct_esgoto_inadequado": 7.9,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.88,
       "pct_lixo_coletado": 99.91,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 97.66,
@@ -549,9 +621,12 @@
       "pct_idosos_60mais": 17.1,
       "pct_via_pavimentada": 99.76,
       "pct_com_calcada": 99.91,
+      "pct_sem_calcada": 0.09,
       "pct_sem_arborizacao": 41.74,
       "pct_sem_bueiro": 0.99,
-      "pct_sem_iluminacao": 0.99
+      "pct_sem_iluminacao": 0.99,
+      "pct_sem_rampa": 67.93,
+      "domicilios_entorno": 3340
     },
     {
       "cd_bairro": "3551009029",
@@ -560,7 +635,7 @@
       "pct_esgoto_rede": 82.14,
       "pct_esgoto_inadequado": 16.61,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 100,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 93.92,
@@ -571,9 +646,12 @@
       "pct_idosos_60mais": 8.76,
       "pct_via_pavimentada": 87.68,
       "pct_com_calcada": 70.18,
+      "pct_sem_calcada": 29.82,
       "pct_sem_arborizacao": 41.96,
       "pct_sem_bueiro": 37.32,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 70.18,
+      "domicilios_entorno": 560
     },
     {
       "cd_bairro": "3551009007",
@@ -582,7 +660,7 @@
       "pct_esgoto_rede": 99.74,
       "pct_esgoto_inadequado": 0.11,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 100,
       "pct_lixo_coletado": 99.85,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 98.62,
@@ -593,9 +671,12 @@
       "pct_idosos_60mais": 21.07,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 100,
+      "pct_sem_calcada": 0,
       "pct_sem_arborizacao": 35.62,
       "pct_sem_bueiro": 9.26,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 70.24,
+      "domicilios_entorno": 2712
     },
     {
       "cd_bairro": "3551009005",
@@ -604,7 +685,7 @@
       "pct_esgoto_rede": 99.69,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.96,
       "pct_lixo_coletado": 99.73,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 99.58,
@@ -615,9 +696,12 @@
       "pct_idosos_60mais": 23.24,
       "pct_via_pavimentada": 100,
       "pct_com_calcada": 99.24,
+      "pct_sem_calcada": 0.76,
       "pct_sem_arborizacao": 34.71,
       "pct_sem_bueiro": 2.65,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 81.63,
+      "domicilios_entorno": 2227
     },
     {
       "cd_bairro": "3551009030",
@@ -626,7 +710,7 @@
       "pct_esgoto_rede": 99.75,
       "pct_esgoto_inadequado": 0,
       "pct_sem_banheiro": 0,
-      "pct_agua_encanada": null,
+      "pct_agua_encanada": 99.58,
       "pct_lixo_coletado": 99.83,
       "pct_lixo_inadequado": 0,
       "taxa_alfabetizacao": 98.54,
@@ -637,9 +721,12 @@
       "pct_idosos_60mais": 20.69,
       "pct_via_pavimentada": 99.92,
       "pct_com_calcada": 99.92,
+      "pct_sem_calcada": 0.08,
       "pct_sem_arborizacao": 29.32,
       "pct_sem_bueiro": 3.73,
-      "pct_sem_iluminacao": 0
+      "pct_sem_iluminacao": 0,
+      "pct_sem_rampa": 97.03,
+      "domicilios_entorno": 1180
     }
   ]
 }
