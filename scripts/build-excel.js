@@ -101,6 +101,18 @@ function main() {
     { header: "Sem bueiro (%)", key: "pct_sem_bueiro", width: 11, style: { numFmt: "0.0" } },
     { header: "Sem iluminação (%)", key: "pct_sem_ilumin", width: 12, style: { numFmt: "0.0" } },
     { header: "Sem rampa p/ cadeirante (%)", key: "pct_sem_rampa", width: 14, style: { numFmt: "0.0" } },
+    // --- Fatores SINTÉTICOS (protótipo — dados fictícios; ver documentação) ---
+    { header: "[SINT] IVS", key: "sint_ivs", width: 10, style: { numFmt: "0.000" } },
+    { header: "[SINT] Desemprego (%)", key: "sint_desemprego", width: 13, style: { numFmt: "0.0" } },
+    { header: "[SINT] Trabalho informal (%)", key: "sint_trab_informal", width: 14, style: { numFmt: "0.0" } },
+    { header: "[SINT] Pobreza (%)", key: "sint_pobreza", width: 12, style: { numFmt: "0.0" } },
+    { header: "[SINT] Jovens fora da escola (%)", key: "sint_jovens_fora_esc", width: 15, style: { numFmt: "0.0" } },
+    { header: "[SINT] Mortalidade infantil (‰)", key: "sint_mort_infantil", width: 15, style: { numFmt: "0.0" } },
+    { header: "[SINT] Mães chefes baixa esc. (%)", key: "sint_maes_chefes", width: 16, style: { numFmt: "0.0" } },
+    { header: "[SINT] Aglomeração domiciliar (%)", key: "sint_aglomeracao", width: 16, style: { numFmt: "0.0" } },
+    { header: "[SINT] Deslocamento > 1h (%)", key: "sint_tempo_desloc", width: 15, style: { numFmt: "0.0" } },
+    { header: "[SINT] Sem veículo (%)", key: "sint_sem_veiculo", width: 13, style: { numFmt: "0.0" } },
+    { header: "[SINT] Criminalidade (/10mil)", key: "sint_criminalidade", width: 15, style: { numFmt: "0.0" } },
   ];
   bairros.forEach((b) => ws.addRow(b));
   estilizar(ws);

@@ -23,7 +23,8 @@ Shapefile (`data/shapefiles/`), mais a planilha
 10. [Risco de inundação](#10-risco-de-inundação--não-entregue)
 11. [Bases descartadas](#11-bases-descartadas-e-por-quê)
 12. [Fatores de desigualdade identificados](#12-fatores-de-desigualdade-identificados)
-13. [Reprodutibilidade](#13-reprodutibilidade)
+13. [Fatores sintéticos e ferramentas de desigualdade](#13-fatores-sintéticos-e-ferramentas-de-desigualdade-protótipo)
+14. [Reprodutibilidade](#14-reprodutibilidade)
 
 ---
 
@@ -424,7 +425,75 @@ parentesco/arranjo familiar, óbitos e domicílios por tipo de ocupação.
 
 ---
 
-## 13. Reprodutibilidade
+## 13. Fatores sintéticos e ferramentas de desigualdade (protótipo)
+
+> **Tudo nesta seção é FICTÍCIO.** Os valores são gerados por
+> `scripts/gen-synthetic-factors.js` para demonstrar as funcionalidades enquanto
+> as bases reais não existem. Não use para análise ou decisão. No site, esses
+> indicadores aparecem sempre com a etiqueta *"Sintético (protótipo — dados
+> fictícios)"* e, na planilha, com o prefixo `[SINT]`.
+
+### Por que estes fatores
+
+Foram escolhidos a partir de frameworks consagrados de vulnerabilidade social,
+cobrindo dimensões que as bases reais ainda não cobriam:
+
+- **IVS/IPEA** (base Censo IBGE) — três dimensões: *Infraestrutura Urbana*,
+  *Capital Humano*, *Renda e Trabalho*.
+- **SVI/CDC-ATSDR** — quatro temas: situação socioeconômica, composição
+  domiciliar, minorias, moradia e transporte.
+- Revisão de **121 índices** (BMC Public Health, 2023) — domínios centrais:
+  populações em risco, educação, situação socioeconômica, composição domiciliar,
+  emprego, moradia e saúde.
+
+| Fator sintético | Dimensão | Framework |
+|---|---|---|
+| Desemprego, trabalho informal, pobreza | Renda e Trabalho | IVS · SVI |
+| Jovens fora da escola, mortalidade infantil, mães chefes de baixa escolaridade | Capital Humano | IVS |
+| Aglomeração domiciliar, tempo de deslocamento, domicílios sem veículo | Infraestrutura / Moradia / Mobilidade | IVS · SVI |
+| Criminalidade | Segurança | SVI |
+| **IVS sintético** (0–1) | síntese das três dimensões | IPEA |
+
+### Como são gerados
+
+Para o protótipo ser coerente, cada fator é função da **renda real** do bairro
+(mais pobre → mais vulnerável) com um ruído controlado e curva levemente convexa.
+O gerador usa um PRNG determinístico com semente no nome do bairro, então a saída
+é idêntica a cada execução. O IVS sintético é a média das três dimensões, cada uma
+normalizada em [0,1]. Resultado: de 0,02 (Boa Vista) a 0,98 (Vila Nova Mariana).
+
+### Sub-áreas (`data/microareas.geojson`)
+
+Para as visões *dentro do bairro* e de *comparação de sub-áreas*, cada bairro é
+subdividido em uma grade (~0,2–0,5 km por célula, recortada ao polígono), gerando
+546 sub-áreas. Cada célula recebe o valor do bairro modulado por um **gradiente
+espacial** (direção aleatória por bairro) mais ruído — a amplitude da variação é
+maior nos bairros mais pobres, para que "desigualdade interna" tenha o que mostrar.
+Alguns indicadores reais (esgoto, alfabetização, cor/raça) também são variados
+dentro do bairro apenas para a demonstração.
+
+### As três ferramentas do mapa
+
+1. **Indicadores** (modo padrão) — coropleto por bairro; os cinco novos
+   indicadores sintéticos (IVS, desemprego, pobreza, jovens fora da escola,
+   criminalidade) entram junto dos reais.
+2. **Desigualdade**
+   - *Entre bairros*: colore o município pela métrica escolhida (escuro = pior) e
+     mostra a dispersão — razão pior/melhor, **Gini** e coeficiente de variação —
+     mais um ranking clicável.
+   - *Dentro do bairro*: colore cada bairro por sua **heterogeneidade interna**
+     (coef. de variação das sub-áreas); ao clicar, revela as sub-áreas daquele
+     bairro e a razão pior/melhor sub-área.
+3. **Comparar áreas** — seleciona duas áreas quaisquer no mapa (bairros ou
+   sub-áreas) e mostra as 15 métricas lado a lado, com a célula pior destacada e
+   uma síntese ("*X é a área mais vulnerável — IVS N× o da outra*").
+
+As métricas comparáveis e o sentido de cada uma (maior/menor é pior) ficam em
+`METRICAS`, no topo de `js/layers-config.js`.
+
+---
+
+## 14. Reprodutibilidade
 
 ```bash
 npm install

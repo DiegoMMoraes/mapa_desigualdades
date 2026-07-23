@@ -1,6 +1,6 @@
 {
   "projeto": "Mapa das Desigualdades — São Vicente",
-  "gerado_em": "2026-07-21",
+  "gerado_em": "2026-07-23",
   "crs": "EPSG:4674 (SIRGAS 2000)",
   "nota_crs": "O GeoJSON (RFC 7946) presume WGS84/EPSG:4326. Em SIRGAS 2000 a diferença no Brasil é submétrica; reprojete se seu fluxo exigir 4326 estrito.",
   "fontes": {

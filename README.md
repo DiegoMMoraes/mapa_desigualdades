@@ -73,6 +73,28 @@ iluminação), vindos dos **Agregados por Bairro do Censo 2022**.
 densidade, % em favela, acesso a saúde, oferta de transporte, coleta seletiva e
 área verde.
 
+## Ferramentas do mapa
+
+O painel tem três modos:
+
+1. **Indicadores** — coropleto por bairro + camadas sobrepostas.
+2. **Desigualdade** — *entre bairros* (dispersão no município: razão pior/melhor,
+   Gini, coef. de variação e ranking) e *dentro do bairro* (heterogeneidade interna
+   por sub-áreas; clique num bairro para abrir suas células).
+3. **Comparar áreas** — selecione duas áreas quaisquer (bairros ou sub-áreas) e veja
+   as 15 métricas lado a lado, com a pior destacada.
+
+### Fatores sintéticos (protótipo)
+
+Para o protótipo foram acrescentados fatores de vulnerabilidade **fictícios**
+(desemprego, pobreza, trabalho informal, jovens fora da escola, mortalidade
+infantil, aglomeração, deslocamento, criminalidade e um **IVS** composto),
+escolhidos a partir do IVS/IPEA, do SVI/CDC e da revisão de 121 índices (BMC 2023).
+Aparecem sempre etiquetados como *"Sintético (protótipo — dados fictícios)"* no site
+e com prefixo `[SINT]` na planilha. Gerados por `npm run gen:sinteticos` e
+`data/microareas.geojson`; ver [DOCUMENTACAO_DADOS.md](DOCUMENTACAO_DADOS.md),
+seção 13.
+
 Cada camada sai em **GeoJSON** (nomes de campo completos) e **Shapefile** (o DBF
 trunca nomes em 10 caracteres — `densidade_hab_km2` vira `densidade_`). O
 `data/manifest.json` mapeia os dois.

@@ -20,15 +20,59 @@
 
 <div class="app-body">
   <aside id="panel" class="panel">
-    <section class="panel__section">
-      <h2>Indicadores</h2>
-      <div id="indicadores"></div>
-    </section>
+    <nav class="modos" id="modos" aria-label="Ferramentas">
+      <button class="modo is-active" data-modo="indicadores">Indicadores</button>
+      <button class="modo" data-modo="desigualdade">Desigualdade</button>
+      <button class="modo" data-modo="comparar">Comparar áreas</button>
+    </nav>
 
-    <section class="panel__section">
-      <h2>Camadas</h2>
-      <div id="camadas"></div>
-    </section>
+    <!-- Modo: Indicadores -->
+    <div class="painel-modo" data-painel="indicadores">
+      <section class="panel__section">
+        <h2>Indicadores</h2>
+        <div id="indicadores"></div>
+      </section>
+      <section class="panel__section">
+        <h2>Camadas</h2>
+        <div id="camadas"></div>
+      </section>
+    </div>
+
+    <!-- Modo: Desigualdade -->
+    <div class="painel-modo" data-painel="desigualdade" hidden>
+      <section class="panel__section">
+        <h2>Desigualdade</h2>
+        <div class="subtoggle" id="sub-desig">
+          <button class="is-active" data-sub="entre">Entre bairros</button>
+          <button data-sub="dentro">Dentro do bairro</button>
+        </div>
+        <label class="campo-label" for="metrica-desig">Métrica</label>
+        <select id="metrica-desig" class="select"></select>
+        <p class="painel__dica" id="desig-dica"></p>
+      </section>
+      <section class="panel__section" id="desig-resultado"></section>
+    </div>
+
+    <!-- Modo: Comparar -->
+    <div class="painel-modo" data-painel="comparar" hidden>
+      <section class="panel__section">
+        <h2>Comparar áreas</h2>
+        <p class="painel__dica">
+          Clique em duas áreas no mapa (bairros ou sub-áreas) para comparar.
+          Use o botão abaixo para alternar a granularidade.
+        </p>
+        <div class="subtoggle" id="sub-comp">
+          <button class="is-active" data-granul="bairros">Bairros</button>
+          <button data-granul="microareas">Sub-áreas</button>
+        </div>
+        <div class="comp-slots">
+          <span class="comp-slot comp-slot--a" id="slot-a">A — clique no mapa</span>
+          <span class="comp-slot comp-slot--b" id="slot-b">B — clique no mapa</span>
+        </div>
+        <button class="btn-limpar" id="comp-limpar">Limpar seleção</button>
+      </section>
+      <section class="panel__section" id="comp-resultado"></section>
+    </div>
 
     <section id="legend" class="panel__section panel__legend" hidden>
       <h2>Legenda</h2>

@@ -10,6 +10,7 @@ const FONTES = {
   cnes: "CNES — Ministério da Saúde",
   sou: "SOU Transportes / Bus2you",
   osm: "OpenStreetMap (ODbL 1.0)",
+  sintetico: "Sintético (protótipo — dados fictícios)",
 };
 
 const LAYERS_CONFIG = {
@@ -253,6 +254,120 @@ const LAYERS_CONFIG = {
       ],
     },
 
+    // ---- Fatores da literatura de vulnerabilidade social (dados sintéticos) ----
+    // Grounded em IVS/IPEA, SVI/CDC e na revisão de 121 índices (BMC 2023).
+    ivs: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Vulnerabilidade social (IVS)",
+      fonte: FONTES.sintetico,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "sint_ivs",
+      scale: { min: 0, max: 1, colorFrom: "#f2f7f4", colorTo: "#5c1a1a" },
+      legendTitle: "Índice de Vulnerabilidade Social (0 = melhor, 1 = pior)",
+      legendSteps: [
+        { value: 0, label: "Muito baixa" },
+        { value: 0.35, label: "Baixa" },
+        { value: 0.65, label: "Alta" },
+        { value: 1, label: "Muito alta" },
+      ],
+      popupRows: (p) => [
+        ["IVS sintético", p.sint_ivs],
+        ["Renda e trabalho — desemprego", `${p.sint_desemprego}%`],
+        ["Capital humano — jovens fora da escola", `${p.sint_jovens_fora_esc}%`],
+        ["Infra/moradia — aglomeração", `${p.sint_aglomeracao}%`],
+        ["Renda média (real)", `R$ ${fmt(p.renda_media_rs)}/mês`],
+      ],
+    },
+
+    desemprego: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Desemprego",
+      fonte: FONTES.sintetico,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "sint_desemprego",
+      scale: { min: 4, max: 22, colorFrom: "#fdf3ee", colorTo: "#a83232" },
+      legendTitle: "Taxa de desocupação (% da força de trabalho)",
+      legendSteps: [
+        { value: 4, label: "4%" },
+        { value: 10, label: "10%" },
+        { value: 16, label: "16%" },
+        { value: 22, label: "22% ou mais" },
+      ],
+      popupRows: (p) => [
+        ["Desemprego", `${p.sint_desemprego}%`],
+        ["Trabalho informal", `${p.sint_trab_informal}%`],
+        ["Pessoas em situação de pobreza", `${p.sint_pobreza}%`],
+      ],
+    },
+
+    pobreza: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Pobreza",
+      fonte: FONTES.sintetico,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "sint_pobreza",
+      scale: { min: 3, max: 60, colorFrom: "#f4f0f7", colorTo: "#4a1d6b" },
+      legendTitle: "% em domicílios com renda per capita < ½ SM",
+      legendSteps: [
+        { value: 3, label: "3%" },
+        { value: 20, label: "20%" },
+        { value: 40, label: "40%" },
+        { value: 60, label: "60% ou mais" },
+      ],
+      popupRows: (p) => [
+        ["Pobreza", `${p.sint_pobreza}%`],
+        ["Aglomeração domiciliar", `${p.sint_aglomeracao}%`],
+        ["Domicílios sem veículo", `${p.sint_sem_veiculo}%`],
+      ],
+    },
+
+    educacao_jovem: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Jovens fora da escola",
+      fonte: FONTES.sintetico,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "sint_jovens_fora_esc",
+      scale: { min: 1, max: 12, colorFrom: "#eef4fb", colorTo: "#1a3f7a" },
+      legendTitle: "% de 6 a 14 anos fora da escola",
+      legendSteps: [
+        { value: 1, label: "1%" },
+        { value: 4, label: "4%" },
+        { value: 8, label: "8%" },
+        { value: 12, label: "12% ou mais" },
+      ],
+      popupRows: (p) => [
+        ["Jovens (6–14) fora da escola", `${p.sint_jovens_fora_esc}%`],
+        ["Mães chefes de baixa escolaridade", `${p.sint_maes_chefes}%`],
+        ["Mortalidade infantil", `${p.sint_mort_infantil} / mil`],
+      ],
+    },
+
+    seguranca: {
+      file: "data/bairros_indicadores.geojson",
+      label: "Criminalidade",
+      fonte: FONTES.sintetico,
+      tipo: "gradiente",
+      nameField: "bairro",
+      valueField: "sint_criminalidade",
+      scale: { min: 10, max: 85, colorFrom: "#fbf1f0", colorTo: "#7a1420" },
+      legendTitle: "Crimes violentos por 10 mil habitantes",
+      legendSteps: [
+        { value: 10, label: "10" },
+        { value: 35, label: "35" },
+        { value: 60, label: "60" },
+        { value: 85, label: "85 ou mais" },
+      ],
+      popupRows: (p) => [
+        ["Crimes violentos / 10 mil hab", p.sint_criminalidade],
+        ["Tempo de deslocamento > 1h", `${p.sint_tempo_desloc}%`],
+        ["Domicílios sem veículo", `${p.sint_sem_veiculo}%`],
+      ],
+    },
+
     coleta: {
       file: "data/bairros_indicadores.geojson",
       label: "Coleta seletiva",
@@ -358,4 +473,38 @@ const LAYERS_CONFIG = {
 function fmt(v) {
   if (v === null || v === undefined || isNaN(v)) return "—";
   return Number(v).toLocaleString("pt-BR");
+}
+
+/**
+ * Métricas usadas nas ferramentas de desigualdade (entre/dentro de bairros e
+ * comparação de áreas). `polo` diz qual direção é pior, para colorir e para o
+ * texto do "gap". `unidade` formata o valor; `campo` é a propriedade no GeoJSON.
+ */
+const METRICAS = [
+  { campo: "sint_ivs", label: "Vulnerabilidade social (IVS)", unidade: "idx", polo: "maior", grupo: "Síntese", fonte: FONTES.sintetico },
+  { campo: "renda_media_rs", label: "Renda média domiciliar", unidade: "R$", polo: "menor", grupo: "Renda e trabalho", fonte: FONTES.ibge },
+  { campo: "sint_pobreza", label: "Pobreza", unidade: "%", polo: "maior", grupo: "Renda e trabalho", fonte: FONTES.sintetico },
+  { campo: "sint_desemprego", label: "Desemprego", unidade: "%", polo: "maior", grupo: "Renda e trabalho", fonte: FONTES.sintetico },
+  { campo: "sint_trab_informal", label: "Trabalho informal", unidade: "%", polo: "maior", grupo: "Renda e trabalho", fonte: FONTES.sintetico },
+  { campo: "taxa_alfabetiz", label: "Alfabetização (15+)", unidade: "%", polo: "menor", grupo: "Capital humano", fonte: FONTES.ibge },
+  { campo: "sint_jovens_fora_esc", label: "Jovens fora da escola", unidade: "%", polo: "maior", grupo: "Capital humano", fonte: FONTES.sintetico },
+  { campo: "sint_mort_infantil", label: "Mortalidade infantil", unidade: "‰", polo: "maior", grupo: "Capital humano", fonte: FONTES.sintetico },
+  { campo: "pct_esgoto_rede", label: "Esgoto em rede", unidade: "%", polo: "menor", grupo: "Infraestrutura", fonte: FONTES.ibge },
+  { campo: "sint_aglomeracao", label: "Aglomeração domiciliar", unidade: "%", polo: "maior", grupo: "Infraestrutura", fonte: FONTES.sintetico },
+  { campo: "sint_tempo_desloc", label: "Deslocamento > 1h", unidade: "%", polo: "maior", grupo: "Mobilidade", fonte: FONTES.sintetico },
+  { campo: "sint_sem_veiculo", label: "Domicílios sem veículo", unidade: "%", polo: "maior", grupo: "Mobilidade", fonte: FONTES.sintetico },
+  { campo: "pct_preta_parda", label: "População preta ou parda", unidade: "%", polo: "maior", grupo: "Composição", fonte: FONTES.ibge },
+  { campo: "sint_criminalidade", label: "Criminalidade", unidade: "/10mil", polo: "maior", grupo: "Segurança", fonte: FONTES.sintetico },
+  { campo: "dist_saude_m", label: "Distância até a saúde", unidade: "m", polo: "maior", grupo: "Serviços", fonte: FONTES.cnes },
+];
+
+function fmtMetrica(v, unidade) {
+  if (v === null || v === undefined || isNaN(v)) return "—";
+  if (unidade === "R$") return "R$ " + fmt(Math.round(v));
+  if (unidade === "%") return fmt(v) + "%";
+  if (unidade === "idx") return Number(v).toFixed(2);
+  if (unidade === "‰") return fmt(v) + "‰";
+  if (unidade === "/10mil") return fmt(v);
+  if (unidade === "m") return fmt(Math.round(v)) + " m";
+  return fmt(v);
 }

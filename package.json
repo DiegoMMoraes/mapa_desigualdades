@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx http-server . -p 8080 -c-1",
-    "build": "node scripts/build-layers.js && node scripts/build-excel.js",
+    "build": "node scripts/build-layers.js && node scripts/gen-synthetic-factors.js && node scripts/build-excel.js",
     "build:layers": "node scripts/build-layers.js",
     "build:excel": "node scripts/build-excel.js",
     "coleta:prefeitura": "node scripts/scrape-coleta-seletiva.js",
@@ -13,7 +13,8 @@
     "fontes:oficiais": "node scripts/fetch-fontes-oficiais.js",
     "verdes:osm": "node scripts/fetch-osm-areas-verdes.js",
     "coletar:tudo": "npm run coleta:prefeitura && npm run transporte:sou && npm run fontes:oficiais && npm run censo:agregados && npm run verdes:osm",
-    "censo:agregados": "node scripts/fetch-censo-agregados.js"
+    "censo:agregados": "node scripts/fetch-censo-agregados.js",
+    "gen:sinteticos": "node scripts/gen-synthetic-factors.js"
   },
   "keywords": [],
   "author": "",
