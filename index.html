@@ -29,7 +29,10 @@
     <!-- Modo: Indicadores -->
     <div class="painel-modo" data-painel="indicadores">
       <section class="panel__section">
-        <h2>Indicadores</h2>
+        <div class="secao-titulo">
+          <h2>Indicadores</h2>
+          <button class="btn-info" data-modal="metodologia">ⓘ Metodologia</button>
+        </div>
         <div id="indicadores"></div>
       </section>
       <section class="panel__section">
@@ -41,7 +44,10 @@
     <!-- Modo: Desigualdade -->
     <div class="painel-modo" data-painel="desigualdade" hidden>
       <section class="panel__section">
-        <h2>Desigualdade</h2>
+        <div class="secao-titulo">
+          <h2>Desigualdade</h2>
+          <button class="btn-info" data-modal="metodologia">ⓘ Como é calculado?</button>
+        </div>
         <div class="subtoggle" id="sub-desig">
           <button class="is-active" data-sub="entre">Entre bairros</button>
           <button data-sub="dentro">Dentro do bairro</button>
@@ -56,7 +62,10 @@
     <!-- Modo: Comparar -->
     <div class="painel-modo" data-painel="comparar" hidden>
       <section class="panel__section">
-        <h2>Comparar áreas</h2>
+        <div class="secao-titulo">
+          <h2>Comparar áreas</h2>
+          <button class="btn-info" data-modal="metodologia">ⓘ Como é calculado?</button>
+        </div>
         <p class="painel__dica">
           Clique em duas áreas no mapa (bairros ou sub-áreas) para comparar.
           Use o botão abaixo para alternar a granularidade.
@@ -81,6 +90,79 @@
   </aside>
 
   <main id="map" class="map"></main>
+</div>
+
+<!-- Modal: metodologia -->
+<div class="modal" id="modal-metodologia" hidden>
+  <div class="modal__backdrop" data-fecha-modal></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="modal__fechar" data-fecha-modal aria-label="Fechar">×</button>
+    <h2 id="modal-titulo" class="modal__titulo">Como medimos vulnerabilidade e desigualdade</h2>
+
+    <div class="modal__aviso">
+      ⚠️ Nesta versão de protótipo, os fatores de vulnerabilidade e o IVS são
+      <strong>dados fictícios</strong>, gerados para demonstrar as ferramentas.
+      A metodologia abaixo é a que será aplicada quando as bases reais entrarem.
+    </div>
+
+    <h3>1. Índice de Vulnerabilidade Social (IVS)</h3>
+    <p>
+      É um número de <strong>0 a 1</strong> — quanto mais perto de 1, pior a
+      situação. Segue a lógica do IVS do IPEA: três dimensões, cada uma é a média
+      dos seus fatores normalizados, e o IVS é a média das três.
+    </p>
+    <div class="formula">
+      IVS = (D<sub>renda</sub> + D<sub>capital humano</sub> + D<sub>infra/moradia</sub>) ⁄ 3
+    </div>
+    <div class="dims">
+      <div class="dim">
+        <b>Renda e trabalho</b>
+        <span>desemprego · trabalho informal · pobreza</span>
+      </div>
+      <div class="dim">
+        <b>Capital humano</b>
+        <span>jovens fora da escola · mortalidade infantil · mães chefes de baixa escolaridade</span>
+      </div>
+      <div class="dim">
+        <b>Infraestrutura e moradia</b>
+        <span>aglomeração domiciliar · deslocamento &gt; 1h · domicílios sem veículo</span>
+      </div>
+    </div>
+    <p class="modal__nota">
+      Cada fator é colocado na escala 0–1 pela sua faixa teórica
+      (<span class="mono">(valor − mín) ⁄ (máx − mín)</span>), de modo que fatores em
+      unidades diferentes (%, óbitos por mil, etc.) possam ser somados.
+      Referências: <em>IVS/IPEA</em>, <em>SVI/CDC-ATSDR</em> e a revisão de 121
+      índices de vulnerabilidade (BMC Public Health, 2023).
+    </p>
+
+    <h3>2. Desigualdade <em>entre</em> bairros</h3>
+    <p>Três medidas de quão espalhados estão os bairros numa métrica:</p>
+    <ul class="modal__lista">
+      <li><b>Razão pior ÷ melhor</b> — quantas vezes o pior bairro supera o melhor.</li>
+      <li><b>Índice de Gini</b> — 0 = todos iguais, 1 = concentração máxima.</li>
+      <li><b>Coeficiente de variação</b> — desvio-padrão dividido pela média (%).</li>
+    </ul>
+
+    <h3>3. Desigualdade <em>dentro</em> do bairro</h3>
+    <p>
+      Cada bairro é dividido em sub-áreas. A cor mostra o <b>coeficiente de
+      variação</b> entre essas sub-áreas: bairros mais "manchados" por dentro são
+      mais desiguais internamente, mesmo com uma boa média.
+    </p>
+
+    <h3>4. Comparar duas áreas</h3>
+    <p>
+      Para cada métrica, a área com o valor pior (segundo o sentido do indicador)
+      é destacada. A "diferença" é uma <b>razão</b> (ex.: renda, IVS) ou a
+      diferença em <b>pontos percentuais</b>, conforme a unidade.
+    </p>
+
+    <p class="modal__rodape">
+      Detalhes completos e a procedência de cada dado real estão na
+      documentação do projeto.
+    </p>
+  </div>
 </div>
 
 <footer class="app-footer">

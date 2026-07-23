@@ -551,6 +551,22 @@
 
   document.getElementById("toggle-panel").addEventListener("click", () => document.getElementById("panel").classList.toggle("is-open"));
 
+  // ---------------------------------------------------------------- modal
+  function abrirModal(id) {
+    const m = document.getElementById(`modal-${id}`);
+    if (m) m.hidden = false;
+  }
+  function fecharModais() {
+    document.querySelectorAll(".modal").forEach((m) => (m.hidden = true));
+  }
+  document.querySelectorAll("[data-modal]").forEach((b) =>
+    b.addEventListener("click", () => abrirModal(b.dataset.modal))
+  );
+  document.querySelectorAll("[data-fecha-modal]").forEach((b) =>
+    b.addEventListener("click", fecharModais)
+  );
+  document.addEventListener("keydown", (e) => e.key === "Escape" && fecharModais());
+
   // início
   document.querySelector('input[name="indicador"][value="renda"]').checked = true;
   setIndicador("renda");
